@@ -6,3 +6,5 @@ class TablaVerdad:
         '→': lambda p, q: (not p) or q,
         '←→': lambda p, q: p == q
     }
+
+print()
