@@ -9,3 +9,4 @@ class TablaVerdad:
 
 print()
 print()
+print()
