@@ -14,7 +14,8 @@ class TablaVerdad:
 
     def validar_expresiones(self):
         for expr in self.expresiones:
-            vars_en_expr = set(filter(str.isalpha, expr))
+            # Extraer variables válidas de la expresión
+            vars_en_expr = set(filter(lambda x: x in self.variables, expr.split()))
             if not vars_en_expr.issubset(set(self.variables)):
                 raise ValueError(f"Las variables {vars_en_expr - set(self.variables)} no fueron ingresadas previamente.")
 
