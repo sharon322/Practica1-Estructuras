@@ -33,15 +33,15 @@ class TablaVerdad:
                         self.evaluar_expresion(q.strip(), valores)
                     )
                 else:
-                    raise ValueError(f"Expresión no válida: {expr}")
+                    raise ValueError(f"Expresion no valida: {expr}")
 
-        raise ValueError(f"Expresión no válida: {expr}")
+        raise ValueError(f"Expresion no valida: {expr}")
 
     def generar_combinaciones(self, n):     #Genera todas las combinaciones posibles de valores booleanos para n variables
         return [[(i >> j) & 1 for j in range(n - 1, -1, -1)] for i in range(2 ** n)]
 
     def generar_tabla(self):      #Genera e imprime la tabla de verdad para las expresiones lógicas 
-        print("\n---- Se ha generado la siguiente tabla de verdad ----")
+        print("\n---- A continuacion se presenta la tabla de verdad generada ----")
         encabezado = " | ".join(self.variables) + " | " + " | ".join(self.expresiones)
         print(encabezado)
         print("-" * len(encabezado))
@@ -56,4 +56,4 @@ class TablaVerdad:
                 fila = " | ".join(map(str, valores)) + " | " + " | ".join(map(str, resultados))
                 print(fila)
             except ValueError as e:
-                print(f"Error en la evaluación de la tabla: {e}")
+                print(f"Error en la evaluacion de la tabla: {e}")
