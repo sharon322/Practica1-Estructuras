@@ -3,8 +3,8 @@ class TablaVerdad:
         'AND': lambda p, q: p and q,  # Operador lógico AND
         'OR': lambda p, q: p or q,      # Operador lógico OR
         'XOR': lambda p, q: p != q,     # Operador lógico XOR
-        '→': lambda p, q: (not p) or q, #alt+26
-        '←→': lambda p, q: p == q  #alt+27 y 26
+        'IMPLIES': lambda p, q: (not p) or q, #alt+26
+        'DIMPLIES': lambda p, q: p == q  #alt+27 y 26
         }
     
     def __init__(self, variables, expresiones): #Inicializa la clase con variables y expresiones lógicas
@@ -16,7 +16,7 @@ class TablaVerdad:
         for expr in self.expresiones:
             # Extraer variables válidas de la expresión
             vars_en_expr = set(filter(lambda x: x in self.variables, expr.split()))
-            if not vars_en_expr.issubset(set(self.variables)):
+            if not vars_en_expr.issubset(set(self.variables)):    #Conjuntos,subconjuntos
                 raise ValueError(f"Las variables {vars_en_expr - set(self.variables)} no fueron ingresadas previamente.")
 
     def evaluar_expresion(self, expr, valores):        #Evalúa una expresión lógica dada un conjunto de valores para las variables

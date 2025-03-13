@@ -18,4 +18,4 @@ def obtener_entrada(mensaje, max_elementos):
 
 # replace(' ', ''): Sustituye todos los espacios en blanco en la entrada del usuario por una cadena vacía, eliminándolos.
 # split(','): Divide la cadena resultante en una lista de elementos utilizando la coma como delimitador.
-#e.isalpha(): método de cadena Python que devuelve True si todos los caracteres son letras. Si está vacío o contiene letras devuelve False.
+#e.isalpha(): método de cadena Python que devuelve True si todos los caracteres son letras. Si está vacío o contiene numeros/simbolos devuelve False.
